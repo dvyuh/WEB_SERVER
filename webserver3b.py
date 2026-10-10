@@ -4,7 +4,6 @@ import time
 SERVER_ADDRESS = (HOST, PORT) = '', 8888
 REQUEST_QUEUE_SIZE = 5
 
-
 def handle_request(client_connection):
     request = client_connection.recv(1024)
     print(request.decode())
@@ -15,7 +14,6 @@ Hello, World!
 """
     client_connection.sendall(http_response)
     time.sleep(60)  # sleep and block the process for 60 seconds
-
 
 def serve_forever():
     listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
